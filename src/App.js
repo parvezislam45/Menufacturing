@@ -1,23 +1,33 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Blog from './Components/Blog/Blog';
+import Deshboard from './Components/Deshboaed/Deshboard';
+import Home from './Components/Home/Home';
+import Login from './Components/Login/Login';
+import Protfolio from './Components/Protfolio/Protfolio';
+import Signup from './Components/SignUp/Signup';
+import Navbar from './Components/Home/Navbar'
+import AllItem from './Components/AllItem/AllItem';
+import Footer from './Footer/Footer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Navbar></Navbar>
+      <Routes>
+        <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/blog' element={<Blog></Blog>}></Route>
+        <Route path='/signup' element={<Signup></Signup>}></Route>
+        <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/deshboard' element={<Deshboard></Deshboard>}></Route>
+        <Route path='/protfolio' element={<Protfolio></Protfolio>}></Route>
+        <Route path='/allitem' element={<AllItem></AllItem>}></Route>       
+      </Routes>
+
+
+      <Footer></Footer>
+
     </div>
   );
 }
