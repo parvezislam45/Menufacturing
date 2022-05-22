@@ -9,6 +9,8 @@ import Signup from './Components/SignUp/Signup';
 import Navbar from './Components/Home/Navbar'
 import AllItem from './Components/AllItem/AllItem';
 import Footer from './Footer/Footer';
+import Parcease from './Components/Parcease/Parcease';
+import RequireAuth from '../src/RequreAuth/RequreAuth'
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/blog' element={<Blog></Blog>}></Route>
+        <Route path='/parcease' element={<RequireAuth><Parcease></Parcease></RequireAuth>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/deshboard' element={<Deshboard></Deshboard>}></Route>

@@ -2,8 +2,11 @@ import React from "react";
 import img from "../../Image/5bb47bb19cc3d3c790f42291212f7f0a.gif";
 import CardSection from "../CardSection/CardSection";
 import { useCountUp } from "react-countup";
+import useProduct from '../../Hook/useProduct'
+import PertsDetails from "../PertsDetails/PertsDetails";
 
 const Home = () => {
+  const [products]=useProduct()
   const countUpRef = React.useRef(null);
   const { start, pauseResume, reset, update } = useCountUp({
     ref: countUpRef,
@@ -112,6 +115,15 @@ const Home = () => {
         <button onClick={pauseResume}>Pause/Resume</button>
         <button onClick={() => update(2000)}>Update to 2000</button>
       </div>
+
+    <div className=' container mx-auto grid grid-cols-1 md:grid-cols-3 gap-5 mt-14 gap-y-10'>
+      {
+        products.map(product=><PertsDetails
+        key = {product._id}
+        product = {product}
+        ></PertsDetails>)
+      }
+    </div>
     </div>
   );
 };
