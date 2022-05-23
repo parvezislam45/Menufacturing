@@ -1,8 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init'
 
 const PertsDetails = ({product}) => {
-    const{_id,name,img,description,price,quantity,seller}=product
+    const{_id,name,img,description,price,quantity,seller}=product;
+    const [user]=useAuthState(auth)
+    const handleAdd= e =>{
+        const booking={
+            orderId:_id,
+            name:name,
+            price:price,
+            quantity:quantity,
+            description:description,
+            orderName: user.displayName,
+            email:user.email
+        }
+        fetch('http://localhost:7000/order',{
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(booking)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data)
+        })
+    }
+    
     return (
         <div className='drop-shadow-2xl '>
             <div className='max-w-sm text-center'>
@@ -22,7 +46,7 @@ const PertsDetails = ({product}) => {
 
 
                     </div>
-                    <Link to={`/parcease/${_id}`}><button type="button" class="text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900">Parcease</button></Link>
+                    <button onClick={()=>handleAdd(_id)} type="button" class="text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900">Parcease</button>
                 </div>
                 
             </div>

@@ -3,9 +3,18 @@ import img from "../../Image/5bb47bb19cc3d3c790f42291212f7f0a.gif";
 import CardSection from "../CardSection/CardSection";
 import useProduct from '../../Hook/useProduct'
 import PertsDetails from "../PertsDetails/PertsDetails";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [products]=useProduct()
+  const navigate = useNavigate()
+  // const handleAdd = id =>{
+  //   // navigate(`tools/${id}`)
+  //   const booking ={
+  //     productsId:_id,
+
+  //   }
+  // }
  
   return (
     <div>
@@ -39,6 +48,7 @@ const Home = () => {
         products.map(product=><PertsDetails
         key = {product._id}
         product = {product}
+        // handleAdd={handleAdd}
         ></PertsDetails>)
       }
     </div>
