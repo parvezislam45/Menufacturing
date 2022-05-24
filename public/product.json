@@ -1,0 +1,109 @@
+[ 
+    {
+    
+        "name": "Brake",
+        "minimum": "You need to Order minimum quantity of 200 pcs",
+        "price": 45,
+        "stock": 400,
+        "description":"brake is used to stop the car.our company has a good quality of brake.we provide high quality products",
+        "img": "https://i.ibb.co/gz0fVNL/brake.jpg"
+      },
+      {
+        "name": "Gear",
+        "minimum": "You need to Order minimum quantity of 200 pcs",
+        "price": 30,
+        "stock": 600,
+        "description":"Gear is used to change the speed of the car.our company has a good quality of gear.we provide high quality products",
+        "img": "https://i.ibb.co/Fb6QhGp/gear-2.jpg"
+      },
+      {
+        "name": "Gear Ultra",
+        "minimum": "You need to Order minimum quantity of 200 pcs",
+        "price": 50,
+        "stock": 900,
+        "description":"Gear Ultra is used you Can Extra Perfomance.",
+        "img": "https://i.ibb.co/cgz7RrV/ultra-gear.jpg"
+      },
+      {
+        "name": "Automatic Gear",
+        "minimum": "You need to Order minimum quantity of 200 pcs",
+        "price": 90,
+        "stock": 700,
+        "description":"Automatic Gear is Improve Your Car Perfomance.",
+        "img": "https://i.ibb.co/18KvpvR/automatic.jpg"
+      },
+      {
+        "name": "CLUTCH Plate",
+        "minimum": "You need to Order minimum quantity of 200 pcs",
+        "price": 30,
+        "stock": 600,
+        "description":"A simple words the function of clutch is to move and stop the vehicle without damaging the engine.",
+        "img": "https://i.ibb.co/C76RtfT/classplate.jpg"
+      },
+      {
+        "name": "Magnatic CLUTCH Plate ",
+        "minimum": "You need to Order minimum quantity of 200 pcs",
+        "price": 70,
+        "stock": 400,
+        "description":"ransmission in automobiles is a systematic arrangement of parts connecting the engine to the wheels.",
+        "img": "https://i.ibb.co/zPZhPnC/classplate-1.jpg"
+      },
+      {
+        "name": "Piston",
+        "minimum": "You need to Order minimum quantity of 200 pcs",
+        "price": 20,
+        "stock": 400,
+        "description":"A piston is a component of reciprocating engines",
+        "img": "https://i.ibb.co/Rvf1SF3/piston.jpg"
+      },
+      {
+        "name": "Oil Box",
+        "minimum": "You need to Order minimum quantity of 200 pcs",
+        "price": 60,
+        "stock": 500,
+        "description":"There is always some sort of confusion among motorcycle riders as to what engine oil to use.",
+        "img": "https://i.ibb.co/wwcVm7T/oilbox.jpg"
+      },
+      {
+        "name": "Light",
+        "minimum": "You need to Order minimum quantity of 200 pcs",
+        "price": 60,
+        "stock": 500,
+        "description":"There is always some sort of confusion among motorcycle riders as to what engine oil to use.",
+        "img": "https://i.ibb.co/WFQCr27/light.jpg"
+      },
+      {
+        "name": "Ball Racer",
+        "minimum": "You need to Order minimum quantity of 200 pcs",
+        "price": 30,
+        "stock": 700,
+        "description":"SEECO is a leading manufacturer of automotive products. We are committed to provide quality products at competitive price. ",
+        "img": "https://i.ibb.co/k3Q4nnR/ball-raser.jpg"
+      },
+      {
+        "name": "Bea Ring",
+        "minimum": "You need to Order minimum quantity of 200 pcs",
+        "price": 10,
+        "stock": 700,
+        "description":" pivot, thrust, high-speed radial, angular contact and full ball complement. at competitive price. ",
+        "img": "https://i.ibb.co/2P6D5W5/bearing.png"
+      },
+      {
+        "name": "Chain",
+        "minimum": "You need to Order minimum quantity of 200 pcs",
+        "price": 10,
+        "stock": 700,
+        "description":" Belts and driveshafts have their perks, but chains are the dominant drivetrain thanks to their low production cost",
+        "img": "https://i.ibb.co/K0vj572/chain.png"
+      },
+      
+      {
+        "name": "Tyres",
+        "minimum": "You need to Order minimum quantity of 200 pcs",
+        "price": 10,
+        "stock": 700,
+        "description":" These tyres are the most noticeable tyres and seen in a number of heavy dual sport",
+        "img": "https://i.ibb.co/WckXjNW/tire.jpg"
+      }
+      
+]
