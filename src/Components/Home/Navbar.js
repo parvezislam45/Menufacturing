@@ -9,6 +9,7 @@ const Navbar = () => {
 
   const logout = () => {
     signOut(auth);
+    localStorage.removeItem('accessToken')
   };
   const menuItems = (
     <>
@@ -22,9 +23,6 @@ const Navbar = () => {
         <Link to="/blog">Blogs</Link>
       </li>
       <li>
-        <Link to="/signup">SignUp</Link>
-      </li>
-      <li>
         <Link to="/protfolio">Protfolio</Link>
       </li>
       {user && (
@@ -33,10 +31,22 @@ const Navbar = () => {
         </li>
       )}
       <li>
+      </li>
+      {user && (
+        <li>
+          <div class="avatar online">
+         <div class="w-8 rounded-full">
+          <img src={user.photoURL} alt="" />
+          </div>
+          </div>
+          <h1>{user.displayName}</h1>
+        </li>
+      )}
+      <li>
         {user ? (
-          <button className="btn btn-ghost" onClick={logout}>
-            Sign Out
-          </button>
+          <li><button className="btn btn-ghost" onClick={logout}>
+          Sign Out
+        </button></li>
         ) : (
           <Link to="/login">Login</Link>
         )}
