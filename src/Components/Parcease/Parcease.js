@@ -6,12 +6,33 @@ const Parcease = () => {
   const params = useParams();
   const [singleProduct, setSingleProduct] = useState([]);
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
   useEffect(() => {
     fetch(`http://localhost:7000/product/${params.id}`)
       .then((res) => res.json())
       .then((data) => setSingleProduct(data));
   }, []);
+
+  const onSubmit = data => {
+    const order = {
+        name: data.name,
+        email: data.email,
+        address: data.Address,
+        phone: data.phone,
+        quantity : data.quantity
+    }
+    fetch("http://localhost:7000/orders", {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(order)
+    })
+    .then(res =>res.json())
+    .then(data =>{
+        console.log(data)
+    })
+}
+
 
   return (
     
@@ -29,7 +50,7 @@ const Parcease = () => {
 
             <div className="my-1 px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
                 <div className="card-body bg-base-100 shadow-xl border-blue-900 border-2">
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={handleSubmit( onSubmit)}>
           <div className="form-control">
             <label className="label">
               <span className="label-text">Name</span>

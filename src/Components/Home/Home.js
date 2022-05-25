@@ -4,17 +4,12 @@ import CardSection from "../CardSection/CardSection";
 import useProduct from "../../Hook/useProduct";
 import PertsDetails from "../PertsDetails/PertsDetails";
 import { useNavigate } from "react-router-dom";
+import Section from "./Section";
+import Section2 from "./Section2";
 
 const Home = () => {
   const [products] = useProduct();
   const navigate = useNavigate();
-  // const handleAdd = id =>{
-  //   // navigate(`tools/${id}`)
-  //   const booking ={
-  //     productsId:_id,
-
-  //   }
-  // }
 
   return (
     <div>
@@ -203,6 +198,13 @@ const Home = () => {
           </div>
         </div>
       </div>
+{/* ----------------------- section-2----------------- */}
+
+          <Section2></Section2>
+
+      {/* ----------------- section-3 ------------ */}
+
+      <Section></Section>
     </div>
   );
 };
