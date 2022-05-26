@@ -6,27 +6,6 @@ import auth from '../../firebase.init'
 const PertsDetails = ({product}) => {
     const{_id,name,img,description,price,quantity,stock}=product;
     const [user]=useAuthState(auth)
-    // const handleAdd= e =>{
-    //     const booking={
-    //         orderId:_id,
-    //         name:name,
-    //         price:price,
-    //         quantity:quantity,
-    //         description:description,
-    //         orderName: user.displayName,
-    //         email:user.email
-    //     }
-    //     fetch('http://localhost:7000/order',{
-    //         method: 'POST',
-    //         headers: {'Content-Type': 'application/json'},
-    //         body: JSON.stringify(booking)
-    //     })
-    //     .then(res => res.json())
-    //     .then(data =>{
-    //         console.log(data)
-    //     })
-    // }
-    
     return (
         <div className='drop-shadow-2xl '>
             <div className='max-w-sm text-center'>

@@ -15,10 +15,10 @@ const Section = () => {
                     Interactive
                 </p>
                 <h4 class="mt-2 text-2xl leading-8 font-extrabold text-gray-900 dark:text-white sm:text-3xl sm:leading-9">
-                    Interactivity between team members is the key of the success.
+                Our Brand Ambasidor Stay Happy & Satisfied For Our Policy & Service
                 </h4>
                 <p class="mt-4 text-lg leading-6 text-gray-500 dark:text-gray-300">
-                    Build a simply and powered collaborative space for all your team. Track, share, measure, you have a fully control, it&#x27;s never be simply and efficient.
+                    We Provide Best Quality Parts .We Import From Abroad .We Business In 130 Country Globally And Maintain All Foregin Policy Condition Rules.
                 </p>
                 <ul class="mt-8 md:grid md:grid-cols-2 gap-6">
                     <li class="mt-6 lg:mt-0">
@@ -30,7 +30,7 @@ const Section = () => {
                                 </svg>
                             </span>
                             <span class="ml-4 text-base leading-6 font-medium text-gray-500 dark:text-gray-200">
-                                Live modifications
+                                Live Online Comunication Service
                             </span>
                         </div>
                     </li>
@@ -43,7 +43,7 @@ const Section = () => {
                                 </svg>
                             </span>
                             <span class="ml-4 text-base leading-6 font-medium text-gray-500 dark:text-gray-200">
-                                Data tracker
+                                Best Quality Maintain
                             </span>
                         </div>
                     </li>
@@ -69,7 +69,7 @@ const Section = () => {
                                 </svg>
                             </span>
                             <span class="ml-4 text-base leading-6 font-medium text-gray-500 dark:text-gray-200">
-                                Free tips to improve work time
+                                Free tips to using Parts
                             </span>
                         </div>
                     </li>

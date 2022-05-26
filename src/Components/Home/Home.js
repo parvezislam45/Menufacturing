@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-import img from "../../Image/5bb47bb19cc3d3c790f42291212f7f0a.gif";
-import CardSection from "../CardSection/CardSection";
+import img from "../../Image/banner.jpg";
 import useProduct from "../../Hook/useProduct";
 import PertsDetails from "../PertsDetails/PertsDetails";
-import { useNavigate } from "react-router-dom";
 import Section from "./Section";
 import Section2 from "./Section2";
-import Riview from "./Riview";
+import Riview from "../Home/Riview";
 
 
 const Home = () => {
@@ -37,7 +35,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <CardSection></CardSection>
 
       <div className=" container mx-auto grid grid-cols-1 md:grid-cols-3 gap-5 mt-14 gap-y-10">
         {products.slice(0, 6).map((product) => (
@@ -49,15 +46,12 @@ const Home = () => {
         ))}
       </div>
 {/* -------------------------Section---------------------- */}
-      <div className=" container mx-auto grid grid-cols-2 md:grid-cols-4 gap-5 gap-y-5">
-      {
-        reviews.map(review =>{
-          <Riview
-          key= {review._id}
-          review={review}
-          ></Riview>
-        })
-      }
+<h1 className="text-2xl">{reviews.length}</h1>
+      <div className=" container mx-auto grid grid-cols-1 md:grid-cols-3 gap-5 mt-14 gap-y-10">
+        {reviews.map(review =><Riview
+        key={review._id}
+        review={review}
+        ></Riview>)}
       </div>
 {/* ----------------------- section-2----------------- */}
 

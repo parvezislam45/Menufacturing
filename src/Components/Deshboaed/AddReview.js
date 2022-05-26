@@ -16,9 +16,10 @@ const AddReview = () => {
         const order = {
             name: data.name,
             description: data.description,
+            img: data.img,
             ratting: data.ratting,
         }
-        fetch("http://localhost:7000/review", {
+        fetch('http://localhost:7000/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -41,9 +42,19 @@ const AddReview = () => {
             </label>
             <input
               type="text"
-              placeholder="Your Address"
+              placeholder="Enter Your Name"
               className="input border-blue-900 border-2"
               {...register("name", {
+              })}
+            />
+            <label className="label">
+              <span className="label-text">Image</span>
+            </label>
+            <input
+              type="text"
+              placeholder="Url"
+              className="input border-blue-900 border-2"
+              {...register("img", {
               })}
             />
             <label className="label">
@@ -51,7 +62,7 @@ const AddReview = () => {
             </label>
             <input
               type="text"
-              placeholder="Your Name"
+              placeholder="Type Your Review"
               className="input border-blue-900 border-2"
               {...register("description", {
               })}
@@ -61,7 +72,7 @@ const AddReview = () => {
             </label>
             <input
               type="text"
-              placeholder="Your Name"
+              placeholder="Select Your Ratting"
               className="input border-blue-900 border-2"
               {...register("ratting", {
               })}
