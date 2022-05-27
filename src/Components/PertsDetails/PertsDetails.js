@@ -3,8 +3,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init'
 
-const PertsDetails = ({product}) => {
-    const{_id,name,img,description,price,quantity,stock}=product;
+const PertsDetails = ({product,setOrder}) => {
+    const{_id,name,img,description,price,stock,minimum}=product;
     const [user]=useAuthState(auth)
     return (
         <div className='drop-shadow-2xl '>
@@ -16,8 +16,9 @@ const PertsDetails = ({product}) => {
                     <div className='item'>
                         <h3 className='text-xl'>Quantity : {stock}</h3>
                         <h2 className='text-xl'>Price : ${price}</h2>
+                        <h2 className='text-xl'>Minimum : ${minimum}</h2>
                     </div>
-                    <Link to = {`/parcease/${_id}`}><button type="button"  class="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-1.5 text-center  dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">Parcease</button></Link>
+                    <Link to = {`/parcease/${_id}`}><button type="button" class="text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-1.5 text-center  dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">Parcease</button></Link>
                     
                 </div>
                 

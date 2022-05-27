@@ -3,7 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 
 const Riview = ({ review }) => {
-  const { name, description, ratting } = review;
+  const { name, description, ratting,img } = review;
 
   return (
 <div class="flex items-center w-full justify-center">
@@ -11,7 +11,7 @@ const Riview = ({ review }) => {
 <div class="max-w-xs">
     <div class="bg-white shadow-xl rounded-lg py-3">
         <div class="photo-wrapper p-2">
-            <img class="w-32 h-32 rounded-full mx-auto" src="https://www.gravatar.com/avatar/2acfb745ecf9d4dccb3364752d17f65f?s=260&d=mp" alt="John Doe"/>
+            <img class="w-32 h-32 rounded-full mx-auto" src={img} alt="John Doe"/>
         </div>
         <div class="p-2">
             <h3 class="text-center text-xl text-gray-900 font-medium leading-8">{name}</h3>

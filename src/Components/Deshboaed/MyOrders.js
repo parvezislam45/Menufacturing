@@ -6,11 +6,14 @@ import OrderDetails from "./OrderDetails";
 const MyOrders = () => {
   const [user] = useAuthState(auth);
   const [products, setProducts] = useState([]);
+  console.log(products)
+ 
   useEffect(() => {
-      fetch("http://localhost:7000/orders")
+      fetch(`http://localhost:7000/orders/user/${user.email}`)
           .then(res => res.json())
           .then(data => setProducts(data));
-  }, [])
+  }, [user.email])
+  console.log(user.email)
   const email = user.email;
   const rest = products.filter(product => product.email === email)
   const handleDelate = id =>{
@@ -52,13 +55,16 @@ const MyOrders = () => {
                                 quantity
                             </th>
                             <th scope="col" class="px-6 py-3">
-                                Remove
+                                Pay Now
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Cancel Order
                             </th>
                         </tr>
                     </thead>
                     <tbody>
                     {
-                                    rest.map(order =><OrderDetails
+                                    products.map(order =><OrderDetails
                                       key={order._id}
                                       order={order}
                                       handleDelate={handleDelate}

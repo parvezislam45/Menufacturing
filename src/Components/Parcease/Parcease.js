@@ -1,25 +1,54 @@
 import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
+import auth from "../../firebase.init";
+import Loadding from "../Loadding/Loadding";
 
 const Parcease = () => {
   const params = useParams();
-  const [singleProduct, setSingleProduct] = useState([]);
+  const [user]=useAuthState(auth)
   const { register, handleSubmit } = useForm();
-  useEffect(() => {
-    fetch(`http://localhost:7000/product/${params.id}`)
-      .then((res) => res.json())
-      .then((data) => setSingleProduct(data));
-  }, []);
+  const [btnDisable,setBtnDisable]= useState([])
+  const [minimumError,setMinimumError]=useState('')
+  const { isLoading, data: singleProduct,refetch} = useQuery('singleProduct', () =>
+  fetch(`http://localhost:7000/product/${params.id}`).then(res =>
+    res.json()
+  )
+)
+if (isLoading) 
+return <Loadding></Loadding>
+const handleBtn = (quantity) => {
+  let qtn = parseInt(quantity);
+  let productQtn = parseInt(singleProduct.quantity);
 
+  if (qtn > productQtn || qtn <=  100) {
+      setBtnDisable(true);
+  } else {
+      setBtnDisable(false);
+  }
+
+}
+ 
   const onSubmit = data => {
+    handleBtn(data.quantity)
+    if(data.quantity < singleProduct.minimum){
+      setMinimumError('Please Select Atleast Minimum Quantity')
+      return
+    }
+    else{setMinimumError('')}
     const order = {
-        name: data.name,
-        email: data.email,
+      product:singleProduct._id,
+      productName:singleProduct.name,
+        email: user.email,
+        name:user.displayName,
         address: data.Address,
         phone: data.phone,
-        quantity : data.quantity
+        quantity : data.quantity,
+        price:singleProduct.price
     }
+    const restQuantity= singleProduct.stock-order.quantity
     fetch("http://localhost:7000/orders", {
         method: 'POST',
         headers: {
@@ -30,6 +59,20 @@ const Parcease = () => {
     .then(res =>res.json())
     .then(data =>{
         console.log(data)
+        fetch(`http://localhost:7000/product/${params.id}`, {
+          method: 'PATCH',
+          headers: {
+              'content-type': 'application/json'
+          },
+          body: JSON.stringify({restQuantity})
+      })
+      .then(res=> res.json())
+      .then(data =>{
+        console.log(data)
+        refetch()
+       
+      })
+
     })
 }
 
@@ -42,9 +85,9 @@ const Parcease = () => {
             <div class="card-body bg-base-100 shadow-xl">
           <img className="w-96" src={singleProduct.img} alt="Shoes" />
           <h2 class="card-title">Name : {singleProduct.name}</h2>
-          {/* <p>Discription :{singleProduct.description}</p> */}
           <h3 className="text-xl">Quantity : {singleProduct.stock}</h3>
-          <h2 className="text-xl">Price : ${singleProduct.price}</h2>
+          <h2 className="text-xl">Price : {singleProduct.price}</h2>
+          <h2 className="text-xl">Minimum : {singleProduct.minimum}</h2>
         </div>
             </div>
 
@@ -59,18 +102,16 @@ const Parcease = () => {
               type="text"
               placeholder="Your Name"
               className="input border-blue-900 border-2"
-              {...register("name", {
-              })}
+              value={user.displayName || ''} readOnly
             />
             <label className="label">
               <span className="label-text">Email</span>
             </label>
             <input
-              type="text"
+              type="email"
               placeholder="Your email"
               className="input border-blue-900 border-2"
-              {...register("email", {
-              })}
+              value={user.email || ''} readOnly
             />
             <label className="label">
               <span className="label-text">Address</span>
@@ -102,6 +143,9 @@ const Parcease = () => {
               {...register("quantity", {
               })}
             />
+            {
+              minimumError && <p>{minimumError}</p>
+            }
             <div className="mt-3 text-center">
             <input type="submit" className="btn btn-outline btn-secondary h-2 w-32" />
             </div>

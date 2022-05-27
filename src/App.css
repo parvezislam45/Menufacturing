@@ -1,6 +1,8 @@
+
 .bg-banner {
-  background-image: url('../../bike-manufacturer/src/Image/david.JPG');
+  background-image: url('../src/Image/IMG_0230.JPG');
   background-size: cover;
   background-repeat: no-repeat;
-  height: 45vh;
+  height: 80vh;
 }
+

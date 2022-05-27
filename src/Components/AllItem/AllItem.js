@@ -11,7 +11,6 @@ const AllItem = () => {
           <PertsDetails
             key={product._id}
             product={product}
-            // handleAdd={handleAdd}
           ></PertsDetails>
         ))}
       </div>
