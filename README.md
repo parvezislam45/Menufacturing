@@ -1,8 +1,6 @@
 * Live Link : https://parts-menufcturar.web.app
-* Client Side Git Hub Link :
-* Server Side Git Hub Link :
-
-
+* Client Side Git Hub Link : https://github.com/programming-hero-web-course1/manufacturer-website-client-side-parvezislam45
+* Server Side Git Hub Link : https://github.com/programming-hero-web-course1/manufacturer-website-server-side-parvezislam45
 * Site Name : David Bike Menufacturer
 * Use React js
 * use Node Js for Backhand
