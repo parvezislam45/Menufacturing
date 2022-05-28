@@ -1,3 +1,21 @@
+* Live Link : https://parts-menufcturar.web.app
+* Client Side Git Hub Link :
+* Server Side Git Hub Link :
+
+
+* Site Name : David Bike Menufacturer
+* Use React js
+* use Node Js for Backhand
+* use Firebase Autentication
+* use react hook from
+* use React Query
+* add dynamic client review section on home page
+* implement jwt token
+* use requre admin page
+* use internation payment system
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
