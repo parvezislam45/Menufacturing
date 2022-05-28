@@ -6,7 +6,7 @@ const AllOrders = () => {
     const [orders,setOrders]=useState([])
     const [user] = useAuthState(auth);
     useEffect(() => {
-        fetch(`http://localhost:7000/orders`)
+        fetch(`https://obscure-gorge-73986.herokuapp.com/orders`)
           .then((res) => res.json())
           .then((data) => setOrders(data));
       }, [user]);

@@ -11,7 +11,7 @@ const Home = () => {
   const [products] = useProduct();
   const [reviews,setReviews]=useState([])
   useEffect(() => {
-      fetch('http://localhost:7000/review')
+      fetch('https://obscure-gorge-73986.herokuapp.com/review')
         .then((res) => res.json())
         .then((data) => setReviews(data));
     }, []);

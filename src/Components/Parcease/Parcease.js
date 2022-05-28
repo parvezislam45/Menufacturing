@@ -13,7 +13,7 @@ const Parcease = () => {
   const [btnDisable,setBtnDisable]= useState([])
   const [minimumError,setMinimumError]=useState('')
   const { isLoading, data: singleProduct,refetch} = useQuery('singleProduct', () =>
-  fetch(`http://localhost:7000/product/${params.id}`).then(res =>
+  fetch(`https://obscure-gorge-73986.herokuapp.com/product/${params.id}`).then(res =>
     res.json()
   )
 )
@@ -49,7 +49,7 @@ const handleBtn = (quantity) => {
         price:singleProduct.price
     }
     const restQuantity= singleProduct.stock-order.quantity
-    fetch("http://localhost:7000/orders", {
+    fetch("https://obscure-gorge-73986.herokuapp.com/orders", {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
@@ -59,7 +59,7 @@ const handleBtn = (quantity) => {
     .then(res =>res.json())
     .then(data =>{
         console.log(data)
-        fetch(`http://localhost:7000/product/${params.id}`, {
+        fetch(`https://obscure-gorge-73986.herokuapp.com/product/${params.id}`, {
           method: 'PATCH',
           headers: {
               'content-type': 'application/json'

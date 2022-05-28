@@ -8,7 +8,7 @@ const AddReview = () => {
     const params = useParams();
     const [singleProduct, setSingleProduct] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:7000/product/${params.id}`)
+        fetch(`https://obscure-gorge-73986.herokuapp.com/product/${params.id}`)
           .then((res) => res.json())
           .then((data) => setSingleProduct(data));
       }, []);
@@ -19,7 +19,7 @@ const AddReview = () => {
             img: data.img,
             ratting: data.ratting,
         }
-        fetch('http://localhost:7000/review', {
+        fetch('https://obscure-gorge-73986.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -9,7 +9,7 @@ const MyOrders = () => {
   console.log(products)
  
   useEffect(() => {
-      fetch(`http://localhost:7000/orders/user/${user.email}`)
+      fetch(`https://obscure-gorge-73986.herokuapp.com/orders/user/${user.email}`)
           .then(res => res.json())
           .then(data => setProducts(data));
   }, [user.email])
@@ -19,7 +19,7 @@ const MyOrders = () => {
   const handleDelate = id =>{
       const proceed = window.confirm('Are You Sure Delate This ???')
       if(proceed){
-          const url = `http://localhost:7000/product//${id}`
+          const url = `https://obscure-gorge-73986.herokuapp.com/product//${id}`
           fetch(url, {
               method:'DELETE'
           })

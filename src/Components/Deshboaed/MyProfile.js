@@ -9,7 +9,7 @@ const MyProfile = () => {
   const [info,setInfo]=useState({})
   const { register, handleSubmit } = useForm();
   useEffect(() => {
-    fetch(`http://localhost:7000/info/${user.email}`)
+    fetch(`https://obscure-gorge-73986.herokuapp.com/info/${user.email}`)
       .then((res) => res.json())
       .then((data) => setInfo(data));
   }, [user]);
@@ -26,7 +26,7 @@ const MyProfile = () => {
         img: data.img,
         github: data.github,
     }
-    fetch("http://localhost:7000/info", {
+    fetch("https://obscure-gorge-73986.herokuapp.com/info", {
         method: 'PUT',
         headers: {
             'content-type': 'application/json'

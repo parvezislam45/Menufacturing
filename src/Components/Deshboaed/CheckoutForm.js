@@ -14,7 +14,7 @@ const CheckoutForm = ({ orders }) => {
 
   useEffect(() => {
     if (price) {
-      fetch("http://localhost:7000/create-payment-intent", {
+      fetch("https://obscure-gorge-73986.herokuapp.com/create-payment-intent", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -77,7 +77,7 @@ const CheckoutForm = ({ orders }) => {
         appointment: _id,
         transactionId: paymentIntent.id,
       };
-      fetch(`http://localhost:7000/orders/${_id}`, {
+      fetch(`https://obscure-gorge-73986.herokuapp.com/orders/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",
