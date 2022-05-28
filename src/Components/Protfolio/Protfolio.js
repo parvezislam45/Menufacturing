@@ -32,7 +32,19 @@ const Protfolio = () => {
           />
         </div>
       </div>
+
+      <div className="mt-5 justify-center">
+      <div class="card w-96 bg-base-100 shadow-xl">
+  <div class="card-body">
+    <h2 class="card-title">About Me</h2>
+    <p>I am Parvez Islam. I was born in Narsingdi. My father is an established businessman.I grew up in Narsingdi from a young age.Anger is too much but respect for people as human beings does not give money power.State Forward people are not afraid to tell the truth.They are willing to do everything for Islam.I love Islam with my life.i have Love Playing Cricket Since Childhood !!</p>
+   
+  </div>
+</div>
+     
+      </div>
       <div className="mt-5">
+        <h1 className="text-3xl text-center">My Skill</h1>
       <div className=" container mx-auto grid grid-cols-3 md:grid-cols-8 gap-2 mt-14 gap-y-10">
         <div class="card w-32 h-48">
           <figure class="px-10 pt-10">

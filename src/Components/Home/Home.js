@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import img from "../../Image/banner.jpg";
+import img from "../../Image/storefront.webp.png";
 import useProduct from "../../Hook/useProduct";
 import PertsDetails from "../PertsDetails/PertsDetails";
 import Section from "./Section";
@@ -25,11 +25,9 @@ const Home = () => {
         <div class="hero-overlay bg-opacity-60"></div>
         <div class="hero-content text-center text-neutral-content">
           <div class="max-w-md">
-            <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
+            <h1 class="mb-5 text-5xl font-bold">David Bike Manufacaturer</h1>
             <p class="mb-5">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
+              World Best Menufacturing Shop.all You need Everything is here.We Provide World Class Quality.
             </p>
             <button class="btn btn-primary">Get Started</button>
           </div>

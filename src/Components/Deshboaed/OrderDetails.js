@@ -18,10 +18,11 @@ const OrderDetails = ({ order, handleDelate }) => {
                     {quantity}
                 </td>
                 <td class="px-6 py-4">
-                    {(price && !paid)&& <Link to={`payment`}><button></button>Pay</Link>}
+                    {(price && !paid) && <Link to={`/dashboard/payment/${_id}`}><button>pay</button></Link>}
+                    {(price && paid) && <span>Paid</span>}
                 </td>
                 <td class="px-6 py-4">
-                    <button onClick={() => handleDelate(_id)}>Cancel</button>
+                    <button onClick={() => handleDelate()}>Cancel</button>
                 </td>
 
         </tr>
